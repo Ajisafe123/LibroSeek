@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hero-section {
+    position: relative;
+    background: url("hero.jpg") center/cover no-repeat;
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: right;
+    padding-right: 100px;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 14px 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 204, 0, 0.4);
+}
+
+header .navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+header .navbar .logo {
+    color: white;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+header .navbar ul {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #ffcc00;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+}
+
+.menu-toggle .menu-close {
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .hero-section {
+        padding-right: 50px;
+        text-align: right;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding-right: 20px;
+        text-align: center;
+        justify-content: flex-start;
+        padding-top: 150px;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+
+    header .navbar {
+        padding: 15px 20px;
+    }
+
+    header .navbar ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: #ffcc00;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 8px;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    header .navbar ul.active {
+        max-height: 500px;
+        padding: 10px 0;
+        
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle .menu-open {
+        display: inline;
+    }
+
+    .menu-toggle.active .menu-open {
+        display: none;
+    }
+
+    .menu-toggle.active .menu-close {
+        display: inline;
+    }
+
+    .navbar ul li a {
+        color: #ffffff;
+        padding: 15px 20px;
+    }
+
+    .navbar ul li a:hover::after {
+        width: 0;
+    }
+}
