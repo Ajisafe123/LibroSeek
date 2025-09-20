@@ -4,39 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LibroSeek</title>
+    <title>LibroSeek - Discover Your Next Favorite Book</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <section class="hero-section">
-        <header>
-            <nav class="navbar">
-                <div class="logo">LibroSeek</div>
-                <div class="menu-toggle">
-                    <span class="menu-open">&#9776;</span>
-                    <span class="menu-close">&times;</span>
-                </div>
-                <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Explore</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Favorites</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <nav class="navbar">
+            <div class="logo">LibroSeek</div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#explore"><i class="fas fa-compass"></i> Explore</a></li>
+                <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#favorites"><i class="fas fa-heart"></i> Favorites</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1>Discover Your Next Favorite Read</h1>
-            <p>Search millions of books, explore trending titles, and dive into new worlds — all in one place.</p>
-            <a href="#search-section" class="hero-btn">Start Searching</a>
+            <h1>Discover Your Next Favorite Book</h1>
+            <p>Explore millions of titles, uncover hidden gems, and dive into worlds of imagination with LibroSeek your
+                personal book discovery hub.</p>
+            <a href="#search" class="hero-btn">
+                <i class="fas fa-search"></i> Start Searching
+            </a>
         </div>
     </section>
 
-    <section id="search-section" class="search-section">
+    <section id="search" class="section search-section">
+        <div class="container">
+            <h2 class="section-title">Find Your Next Great Read</h2>
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" id="searchInput" placeholder="Search by title, author, or keyword...">
+                    <button id="searchBtn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Searching for amazing books...</p>
+                </div>
+                <div id="searchResults" class="books-grid"></div>
+            </div>
+        </div>
     </section>
 
-    <script src="./app.js"></script>
+    <section id="explore" class="section explore-section">
+        <div class="container">
+            <h2 class="section-title">Explore Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="fiction">
+                    <i class="fas fa-book"></i>
+                    <h3>Fiction</h3>
+                    <p>Dive into imaginary worlds</p>
+                </div>
+                <div class="category-card" data-category="mystery">
+                    <i class="fas fa-search"></i>
+                    <h3>Mystery</h3>
+                    <p>Solve thrilling puzzles</p>
+                </div>
+                <div class="category-card" data-category="romance">
+                    <i class="fas fa-heart"></i>
+                    <h3>Romance</h3>
+                    <p>Fall in love with stories</p>
+                </div>
+                <div class="category-card" data-category="science">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science</h3>
+                    <p>Explore the universe</p>
+                </div>
+                <div class="category-card" data-category="biography">
+                    <i class="fas fa-user"></i>
+                    <h3>Biography</h3>
+                    <p>Learn from great lives</p>
+                </div>
+                <div class="category-card" data-category="fantasy">
+                    <i class="fas fa-dragon"></i>
+                    <h3>Fantasy</h3>
+                    <p>Enter magical realms</p>
+                </div>
+            </div>
+            <div id="categoryResults" class="books-grid"></div>
+        </div>
+    </section>
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About LibroSeek</h2>
+                    <p>LibroSeek is your ultimate book companion, designed to help book enthusiasts navigate the vast
+                        world of literature effortlessly. From discovering new titles to tracking your reading journey,
+                        LibroSeek provides personalized recommendations, curated collections, and detailed insights into
+                        every genre imaginable.</p>
+                    <p>Whether you're a casual reader or a dedicated bibliophile, LibroSeek empowers you to explore,
+                        organize, and enjoy your literary adventures with ease and excitement.</p>
+                    <p>Join thousands of readers who have already discovered their next favorite books through our
+                        platform. Start your literary journey today!</p>
+                </div>
+                <div class="about-image">
+                    <img src="about.jpg" alt="LibroSeek Books">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="favorites" class="section favorites-section">
+        <div class="container">
+            <h2 class="section-title">Your Favorite Books</h2>
+            <div id="favoritesContainer">
+                <div class="no-books">
+                    <i class="fas fa-heart"></i>
+                    <h3>No favorites yet</h3>
+                    <p>Start exploring and add books to your favorites!</p>
+                </div>
+            </div>
+            <div id="favoritesResults" class="books-grid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>Developed by <a href="https://cybrox-eta.vercel.app/" target="_blank">Cybrox</a> | 2025 | For learning &
+                portfolio showcase</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
 </body>
 
 </html>
