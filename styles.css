@@ -181,7 +181,9 @@ header .navbar ul {
     display: none;
     cursor: pointer;
     font-size: 24px;
-    color: rgb(255, 255, 23);
+    background: linear-gradient(45deg, #ffcc00, #ff9900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     transition: color 0.3s ease;
 }
 
